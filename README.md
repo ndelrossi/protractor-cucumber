@@ -1,6 +1,6 @@
 ### Protractor-Cucumber proof of concept
 
-Proof of concept for webdriverio and cucumber. Uses typescript and page
+Proof of concept for protractor and cucumber. Uses typescript and page
 objects.  
 
 Uses sample app at
