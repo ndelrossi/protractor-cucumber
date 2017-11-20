@@ -1,11 +1,14 @@
-import { browser } from "protractor";
 import { PageObject } from "./page";
 
 export class LoginPageObject extends PageObject {
 
-  getUsernameBox() { return browser.$("input[formcontrolname='username'"); }
-  getPasswordBox() { return browser.$("input[formcontrolname='password']"); }
-  getLoginButton() { return browser.$("button[type='submit']"); }
+  constructor () {
+    super();
+  }
+
+  getUsernameBox() { return this.browser.$("input[formcontrolname='username'"); }
+  getPasswordBox() { return this.browser.$("input[formcontrolname='password']"); }
+  getLoginButton() { return this.browser.$("button[type='submit']"); }
 
   async open() {
     super.open('#/login');

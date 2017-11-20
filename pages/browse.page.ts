@@ -1,20 +1,23 @@
-import { browser, by } from "protractor";
 import { PageObject } from "./page";
 
 export class BrowsePageObject extends PageObject {
-  
-  getSearchBox() { return browser.$("input[placeholder='Search for a book']"); }
+
+  constructor () {
+    super();
+  }
+
+  getSearchBox() { return this.browser.$("input[placeholder='Search for a book']"); }
   
   async open() {
     super.open('#/books/find');
   }
 
   async waitForResults() {
-    await browser.sleep(3000)
+    await this.browser.sleep(3000)
   }
   
   getFirstBookTitle() {
-    return browser.element(by.tagName('bc-book-preview')).getText();
+    return this.browser.element(this.by.tagName('bc-book-preview')).getText();
   }
 
   searchBook(bookName: string) {
@@ -23,7 +26,7 @@ export class BrowsePageObject extends PageObject {
 
   async selectFirstBook() {
     await this.waitForResults();
-    await browser.element(by.tagName('bc-book-preview')).click();
+    await this.browser.element(this.by.tagName('bc-book-preview')).click();
   }
   
 }
